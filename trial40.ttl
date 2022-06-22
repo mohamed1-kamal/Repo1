@@ -1,0 +1,245 @@
+ @prefix comm: <http://www.owl-ontologies.com/comm#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix ex: <http://example.org/#> .
+@prefix lpbf: <http://base.namespace1.com#> .
+@prefix obo: <http://purl.obolibrary.org/obo/#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+lpbf: a owl:Ontology ;
+    dc:description "Ontology code created by Chowlk" .
+
+ex:AIM3DEXAM255 a owl:Class ;
+    rdfs:label "A I M3 D E X A M255" ;
+    rdfs:subClassOf ex:AdditiveManufacturingMachine .
+
+ex:ActOfMilling a owl:Class ;
+    rdfs:label "Act Of Milling" ;
+    rdfs:subClassOf comm:ActOfArtifactModification .
+
+ex:CompositeExtrusionModelling a owl:Class ;
+    rdfs:label "Composite Extrusion Modelling" ;
+    rdfs:subClassOf ex:ActOfAdditiveManufacturing .
+
+ex:DirectEnergyDepositionArc a owl:Class ;
+    rdfs:label "Direct Energy Deposition Arc" ;
+    rdfs:subClassOf ex:ActOfAdditiveManufacturing .
+
+ex:EOSM290CoordinateSystem a owl:Class ;
+    rdfs:label "E O S M290 Coordinate System" ;
+    rdfs:subClassOf comm:CartesianCoordinateSystem .
+
+ex:LayerHeightParameter a owl:Class ;
+    rdfs:label "Layer Height Parameter" ;
+    rdfs:subClassOf comm:PerformanceSpecification .
+
+ex:LayerHeightParameter1 a owl:NamedIndividual ;
+    ex:hasvalueof 3e-02 .
+
+ex:PortionOf316LSteel a owl:Class ;
+    rdfs:label "Portion Of316 L Steel" ;
+    rdfs:subClassOf ex:PortionOfSteel .
+
+ex:PortionOfManganese a owl:Class ;
+    rdfs:label "Portion Of Manganese" .
+
+ex:PortionOfMolybdenum a owl:Class ;
+    rdfs:label "Portion Of Molybdenum" ;
+    rdfs:subClassOf ex:PortionOfMaterial .
+
+ex:PortionOfPowder a owl:Class ;
+    rdfs:label "Portion Of Powder" ;
+    rdfs:subClassOf obo:ObjectAggregate .
+
+ex:PowderBedFusionLaserBeam a owl:Class ;
+    rdfs:label "Powder Bed Fusion Laser Beam" ;
+    rdfs:subClassOf ex:ActOfAdditiveManufacturing .
+
+ex:Standard a owl:Class ;
+    rdfs:label "Standard" ;
+    rdfs:subClassOf comm:DirectiveInformationContentEntity .
+
+ex:TensileTestSpecimen a owl:Class ;
+    rdfs:label "Tensile Test Specimen" ;
+    rdfs:subClassOf comm:Artifact .
+
+ex:YieldStrength a owl:Class ;
+    rdfs:label "Yield Strength" ;
+    rdfs:subClassOf comm:Strength .
+
+obo:FiatObjectPart a owl:Class ;
+    rdfs:label "Fiat Object Part" ;
+    rdfs:subClassOf obo:MaterialEntity .
+
+comm:ActOfTensileTesting a owl:Class ;
+    rdfs:label "Act Of Tensile Testing" ;
+    rdfs:subClassOf comm:ActOfMeasuring .
+
+comm:DimensionSpecification a owl:Class ;
+    rdfs:label "Dimension Specification" ;
+    rdfs:subClassOf comm:QualitySpecification .
+
+comm:Length a owl:Class ;
+    rdfs:label "Length" ;
+    rdfs:subClassOf comm:SizeQuality .
+
+comm:MillimeterMeasurementUnit a owl:Class ;
+    rdfs:label "Millimeter Measurement Unit" ;
+    rdfs:subClassOf comm:MeasurementUnitOfLength .
+
+comm:ShapeQuality a owl:Class ;
+    rdfs:label "Shape Quality" ;
+    rdfs:subClassOf obo:Quality .
+
+comm:SpatialOrientation a owl:Class ;
+    rdfs:label "Spatial Orientation" ;
+    rdfs:subClassOf obo:relational_quality .
+
+ex:AdditiveManufacturingMachine a owl:Class ;
+    rdfs:label "Additive Manufacturing Machine" ;
+    rdfs:subClassOf comm:Artifact .
+
+ex:PortionOfSteel a owl:Class ;
+    rdfs:label "Portion Of Steel" ;
+    rdfs:subClassOf ex:PortionOfMaterial .
+
+obo:GenericallyDependentContinuant a owl:Class ;
+    rdfs:label "Generically Dependent Continuant" ;
+    rdfs:subClassOf obo:Continuant .
+
+obo:IndependentContinuant a owl:Class ;
+    rdfs:label "Independent Continuant" ;
+    rdfs:subClassOf obo:Continuant .
+
+obo:Object a owl:Class ;
+    rdfs:label "Object" ;
+    rdfs:subClassOf obo:MaterialEntity .
+
+obo:Occurent a owl:Class ;
+    rdfs:label "Occurent" ;
+    rdfs:subClassOf obo:Entity .
+
+obo:Process a owl:Class ;
+    rdfs:label "Process" ;
+    rdfs:subClassOf obo:Occurent .
+
+obo:RealizableEntity a owl:Class ;
+    rdfs:label "Realizable Entity" ;
+    rdfs:subClassOf obo:Quality .
+
+obo:SpecificallyDependentContinuant a owl:Class ;
+    rdfs:label "Specifically Dependent Continuant" ;
+    rdfs:subClassOf obo:Continuant .
+
+obo:relational_quality a owl:Class ;
+    rdfs:label "relational_quality" ;
+    rdfs:subClassOf obo:Quality .
+
+comm:Act a owl:Class ;
+    rdfs:label "Act" ;
+    rdfs:subClassOf obo:Process .
+
+comm:ActOfArtifactModification a owl:Class ;
+    rdfs:label "Act Of Artifact Modification" ;
+    rdfs:subClassOf comm:ActOfArtifactProcessing .
+
+comm:ActOfManufacturing a owl:Class ;
+    rdfs:label "Act Of Manufacturing" ;
+    rdfs:subClassOf comm:ActOfArtifactProcessing .
+
+comm:ActOfMeasuring a owl:Class ;
+    rdfs:label "Act Of Measuring" ;
+    rdfs:subClassOf comm:IntentionalAct .
+
+comm:CartesianCoordinateSystem a owl:Class ;
+    rdfs:label "Cartesian Coordinate System" ;
+    rdfs:subClassOf comm:SpatialReferenceSystem .
+
+comm:MeasurementUnit a owl:Class ;
+    rdfs:label "Measurement Unit" ;
+    rdfs:subClassOf comm:DescriptiveInformationContentEntity .
+
+comm:MeasurementUnitOfLength a owl:Class ;
+    rdfs:label "Measurement Unit Of Length" ;
+    rdfs:subClassOf comm:MeasurementUnit .
+
+comm:PerformanceSpecification a owl:Class ;
+    rdfs:label "Performance Specification" ;
+    rdfs:subClassOf comm:DirectiveInformationContentEntity .
+
+comm:QualitySpecification a owl:Class ;
+    rdfs:label "Quality Specification" ;
+    rdfs:subClassOf comm:DirectiveInformationContentEntity .
+
+comm:ReferenceSystem a owl:Class ;
+    rdfs:label "Reference System" ;
+    rdfs:subClassOf comm:DescriptiveInformationContentEntity .
+
+comm:SizeQuality a owl:Class ;
+    rdfs:label "Size Quality" ;
+    rdfs:subClassOf obo:Quality .
+
+comm:SpatialReferenceSystem a owl:Class ;
+    rdfs:label "Spatial Reference System" ;
+    rdfs:subClassOf comm:ReferenceSystem .
+
+comm:Strength a owl:Class ;
+    rdfs:label "Strength" ;
+    rdfs:subClassOf obo:RealizableEntity .
+
+owl:Thing a owl:Class ;
+    rdfs:label "Thing" .
+
+ex:PortionOfMaterial a owl:Class ;
+    rdfs:label "Portion Of Material" ;
+    rdfs:subClassOf obo:ObjectAggregate .
+
+obo:Entity a owl:Class ;
+    rdfs:label "Entity" ;
+    rdfs:subClassOf owl:Thing .
+
+obo:ObjectAggregate a owl:Class ;
+    rdfs:label "Object Aggregate" ;
+    rdfs:subClassOf obo:MaterialEntity .
+
+comm:ActOfArtifactProcessing a owl:Class ;
+    rdfs:label "Act Of Artifact Processing" ;
+    rdfs:subClassOf comm:IntentionalAct .
+
+comm:Artifact a owl:Class ;
+    rdfs:label "Artifact" ;
+    rdfs:subClassOf obo:Object .
+
+comm:DescriptiveInformationContentEntity a owl:Class ;
+    rdfs:label "Descriptive Information Content Entity" ;
+    rdfs:subClassOf comm:InformationContentEntity .
+
+comm:InformationContentEntity a owl:Class ;
+    rdfs:label "Information Content Entity" ;
+    rdfs:subClassOf obo:GenericallyDependentContinuant .
+
+comm:IntentionalAct a owl:Class ;
+    rdfs:label "Intentional Act" ;
+    rdfs:subClassOf comm:Act .
+
+ex:ActOfAdditiveManufacturing a owl:Class ;
+    rdfs:label "Act Of Additive Manufacturing" ;
+    rdfs:subClassOf comm:ActOfManufacturing .
+
+obo:Continuant a owl:Class ;
+    rdfs:label "Continuant" ;
+    rdfs:subClassOf obo:Entity .
+
+obo:MaterialEntity a owl:Class ;
+    rdfs:label "Material Entity" ;
+    rdfs:subClassOf obo:IndependentContinuant .
+
+comm:DirectiveInformationContentEntity a owl:Class ;
+    rdfs:label "Directive Information Content Entity" ;
+    rdfs:subClassOf comm:InformationContentEntity .
+
+obo:Quality a owl:Class ;
+    rdfs:label "Quality" ;
+    rdfs:subClassOf obo:SpecificallyDependentContinuant .
+
