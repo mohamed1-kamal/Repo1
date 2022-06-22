@@ -15,12 +15,6 @@
 @prefix comm: <http://www.owl-ontologies.com/comm#> .
 @base <http://base.namespace1.com#> .
 
-<http://base.namespace1.com#> rdf:type owl:Ontology ;
-			dc:creator "ODE_AM" ;
-			owl:versionInfo "0.0.1" ;
-			dc:title "Template Ontology" ;
-			dc:description "Ontology code created by Chowlk" .
-
 #################################################################
 #    Object Properties
 #################################################################
