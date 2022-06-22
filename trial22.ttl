@@ -1,0 +1,33 @@
+ @prefix comm: <http://www.owl-ontologies.com/comm#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix lpbf: <http://base.namespace1.com#> .
+@prefix obo: <http://purl.obolibrary.org/obo/#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+lpbf: a owl:Ontology ;
+    dc:description "Ontology code created by Chowlk" .
+
+comm:IntentionalAct a owl:Class ;
+    rdfs:label "Intentional Act" ;
+    rdfs:subClassOf comm:Act .
+
+obo:Entity a owl:Class ;
+    rdfs:label "Entity" ;
+    rdfs:subClassOf owl:Thing .
+
+obo:Occurent a owl:Class ;
+    rdfs:label "Occurent" ;
+    rdfs:subClassOf obo:Entity .
+
+obo:Process a owl:Class ;
+    rdfs:label "Process" ;
+    rdfs:subClassOf obo:Occurent .
+
+comm:Act a owl:Class ;
+    rdfs:label "Act" ;
+    rdfs:subClassOf obo:Process .
+
+owl:Thing a owl:Class ;
+    rdfs:label "Thing" .
+
