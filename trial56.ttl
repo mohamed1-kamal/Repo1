@@ -1,0 +1,339 @@
+ @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix lpbf: <http://base.namespace1.com#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/#> .
+@prefix cco: <http://www.ontologyrepository.com/CommonCoreOntologies/#> .
+@prefix ex: <http://example.org/#> .
+@prefix comm: <http://www.owl-ontologies.com/comm#> .
+@base <http://base.namespace1.com#> .
+
+<http://base.namespace1.com#> rdf:type owl:Ontology ;
+			dc:description "Ontology code created by Chowlk" .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+#################################################################
+#    Data Properties
+#################################################################
+
+#################################################################
+#    Classes
+#################################################################
+
+### owl:Thing
+owl:Thing rdf:type owl:Class ;
+	rdfs:label "Thing" .
+
+### obo:Entity
+obo:Entity rdf:type owl:Class ;
+	rdfs:label "Entity" ;
+	rdfs:subClassOf owl:Thing .
+
+### obo:Occurent
+obo:Occurent rdf:type owl:Class ;
+	rdfs:label "Occurent" ;
+	rdfs:subClassOf obo:Entity .
+
+### obo:Process
+obo:Process rdf:type owl:Class ;
+	rdfs:label "Process" ;
+	rdfs:subClassOf obo:Occurent .
+
+### comm:Act
+comm:Act rdf:type owl:Class ;
+	rdfs:label "Act" ;
+	rdfs:subClassOf obo:Process .
+
+### comm:IntentionalAct
+comm:IntentionalAct rdf:type owl:Class ;
+	rdfs:label "Intentional Act" ;
+	rdfs:subClassOf comm:Act .
+
+### comm:ActOfArtifactProcessing
+comm:ActOfArtifactProcessing rdf:type owl:Class ;
+	rdfs:label "Act Of Artifact Processing" ;
+	rdfs:subClassOf comm:IntentionalAct .
+
+### comm:ActOfManufacturing
+comm:ActOfManufacturing rdf:type owl:Class ;
+	rdfs:label "Act Of Manufacturing" ;
+	rdfs:subClassOf comm:ActOfArtifactProcessing .
+
+### comm:ActOfArtifactModification
+comm:ActOfArtifactModification rdf:type owl:Class ;
+	rdfs:label "Act Of Artifact Modification" ;
+	rdfs:subClassOf comm:ActOfArtifactProcessing .
+
+### comm:ActOfMeasuring
+comm:ActOfMeasuring rdf:type owl:Class ;
+	rdfs:label "Act Of Measuring" ;
+	rdfs:subClassOf comm:IntentionalAct .
+
+### comm:ActOfTensileTesting
+comm:ActOfTensileTesting rdf:type owl:Class ;
+	rdfs:label "Act Of Tensile Testing" ;
+	rdfs:subClassOf comm:ActOfMeasuring .
+
+### ex:ActOfMilling
+ex:ActOfMilling rdf:type owl:Class ;
+	rdfs:label "Act Of Milling" ;
+	rdfs:subClassOf comm:ActOfArtifactModification .
+
+### ex:ActOfAdditiveManufacturing
+ex:ActOfAdditiveManufacturing rdf:type owl:Class ;
+	rdfs:label "Act Of Additive Manufacturing" ;
+	rdfs:subClassOf comm:ActOfManufacturing .
+
+### ex:PowderBedFusionLaserBeam
+ex:PowderBedFusionLaserBeam rdf:type owl:Class ;
+	rdfs:label "Powder Bed Fusion Laser Beam" ;
+	rdfs:subClassOf ex:ActOfAdditiveManufacturing .
+
+### ex:CompositeExtrusionModelling
+ex:CompositeExtrusionModelling rdf:type owl:Class ;
+	rdfs:label "Composite Extrusion Modelling" ;
+	rdfs:subClassOf ex:ActOfAdditiveManufacturing .
+
+### ex:DirectEnergyDepositionArc
+ex:DirectEnergyDepositionArc rdf:type owl:Class ;
+	rdfs:label "Direct Energy Deposition Arc" ;
+	rdfs:subClassOf ex:ActOfAdditiveManufacturing .
+
+### obo:Continuant
+obo:Continuant rdf:type owl:Class ;
+	rdfs:label "Continuant" ;
+	rdfs:subClassOf obo:Entity .
+
+### obo:IndependentContinuant
+obo:IndependentContinuant rdf:type owl:Class ;
+	rdfs:label "Independent Continuant" ;
+	rdfs:subClassOf obo:Continuant .
+
+### obo:MaterialEntity
+obo:MaterialEntity rdf:type owl:Class ;
+	rdfs:label "Material Entity" ;
+	rdfs:subClassOf obo:IndependentContinuant .
+
+### obo:Object
+obo:Object rdf:type owl:Class ;
+	rdfs:label "Object" ;
+	rdfs:subClassOf obo:MaterialEntity .
+
+### comm:Artifact
+comm:Artifact rdf:type owl:Class ;
+	rdfs:label "Artifact" ;
+	rdfs:subClassOf obo:Object .
+
+### ex:AdditiveManufacturingMachine
+ex:AdditiveManufacturingMachine rdf:type owl:Class ;
+	rdfs:label "Additive Manufacturing Machine" ;
+	rdfs:subClassOf comm:Artifact .
+
+### ex:AIM3DEXAM255
+ex:AIM3DEXAM255 rdf:type owl:Class ;
+	rdfs:label "A I M3 D E X A M255" ;
+	rdfs:subClassOf ex:AdditiveManufacturingMachine .
+
+### obo:FiatObjectPart
+obo:FiatObjectPart rdf:type owl:Class ;
+	rdfs:label "Fiat Object Part" ;
+	rdfs:subClassOf obo:MaterialEntity .
+
+### ex:TensileTestSpecimen
+ex:TensileTestSpecimen rdf:type owl:Class ;
+	rdfs:label "Tensile Test Specimen" ;
+	rdfs:subClassOf comm:Artifact .
+
+### obo:ObjectAggregate
+obo:ObjectAggregate rdf:type owl:Class ;
+	rdfs:label "Object Aggregate" ;
+	rdfs:subClassOf obo:MaterialEntity .
+
+### ex:PortionOfPowder
+ex:PortionOfPowder rdf:type owl:Class ;
+	rdfs:label "Portion Of Powder" ;
+	rdfs:subClassOf obo:ObjectAggregate .
+
+### ex:PortionOfMaterial
+ex:PortionOfMaterial rdf:type owl:Class ;
+	rdfs:label "Portion Of Material" ;
+	rdfs:subClassOf obo:ObjectAggregate .
+
+### ex:PortionOfManganese
+ex:PortionOfManganese rdf:type owl:Class ;
+	rdfs:label "Portion Of Manganese" .
+
+### ex:PortionOfMolybdenum
+ex:PortionOfMolybdenum rdf:type owl:Class ;
+	rdfs:label "Portion Of Molybdenum" ;
+	rdfs:subClassOf ex:PortionOfMaterial .
+
+### ex:PortionOfSteel
+ex:PortionOfSteel rdf:type owl:Class ;
+	rdfs:label "Portion Of Steel" ;
+	rdfs:subClassOf ex:PortionOfMaterial .
+
+### ex:PortionOf316LSteel
+ex:PortionOf316LSteel rdf:type owl:Class ;
+	rdfs:label "Portion Of316 L Steel" ;
+	rdfs:subClassOf ex:PortionOfSteel .
+
+### obo:SpecificallyDependentContinuant
+obo:SpecificallyDependentContinuant rdf:type owl:Class ;
+	rdfs:label "Specifically Dependent Continuant" ;
+	rdfs:subClassOf obo:Continuant .
+
+### obo:Quality
+obo:Quality rdf:type owl:Class ;
+	rdfs:label "Quality" ;
+	rdfs:subClassOf obo:SpecificallyDependentContinuant .
+
+### obo:relational_quality
+obo:relational_quality rdf:type owl:Class ;
+	rdfs:label "relational_quality" ;
+	rdfs:subClassOf obo:Quality .
+
+### comm:SpatialOrientation
+comm:SpatialOrientation rdf:type owl:Class ;
+	rdfs:label "Spatial Orientation" ;
+	rdfs:subClassOf obo:relational_quality .
+
+### comm:ShapeQuality
+comm:ShapeQuality rdf:type owl:Class ;
+	rdfs:label "Shape Quality" ;
+	rdfs:subClassOf obo:Quality .
+
+### comm:SizeQuality
+comm:SizeQuality rdf:type owl:Class ;
+	rdfs:label "Size Quality" ;
+	rdfs:subClassOf obo:Quality .
+
+### comm:Length
+comm:Length rdf:type owl:Class ;
+	rdfs:label "Length" ;
+	rdfs:subClassOf comm:SizeQuality .
+
+### obo:RealizableEntity
+obo:RealizableEntity rdf:type owl:Class ;
+	rdfs:label "Realizable Entity" ;
+	rdfs:subClassOf obo:Quality .
+
+### comm:Strength
+comm:Strength rdf:type owl:Class ;
+	rdfs:label "Strength" ;
+	rdfs:subClassOf obo:RealizableEntity .
+
+### ex:YieldStrength
+ex:YieldStrength rdf:type owl:Class ;
+	rdfs:label "Yield Strength" ;
+	rdfs:subClassOf comm:Strength .
+
+### obo:GenericallyDependentContinuant
+obo:GenericallyDependentContinuant rdf:type owl:Class ;
+	rdfs:label "Generically Dependent Continuant" ;
+	rdfs:subClassOf obo:Continuant .
+
+### comm:InformationContentEntity
+comm:InformationContentEntity rdf:type owl:Class ;
+	rdfs:label "Information Content Entity" ;
+	rdfs:subClassOf obo:GenericallyDependentContinuant .
+
+### comm:DirectiveInformationContentEntity
+comm:DirectiveInformationContentEntity rdf:type owl:Class ;
+	rdfs:label "Directive Information Content Entity" ;
+	rdfs:subClassOf comm:InformationContentEntity .
+
+### comm:QualitySpecification
+comm:QualitySpecification rdf:type owl:Class ;
+	rdfs:label "Quality Specification" ;
+	rdfs:subClassOf comm:DirectiveInformationContentEntity .
+
+### comm:DimensionSpecification
+comm:DimensionSpecification rdf:type owl:Class ;
+	rdfs:label "Dimension Specification" ;
+	rdfs:subClassOf comm:QualitySpecification .
+
+### comm:PerformanceSpecification
+comm:PerformanceSpecification rdf:type owl:Class ;
+	rdfs:label "Performance Specification" ;
+	rdfs:subClassOf comm:DirectiveInformationContentEntity .
+
+### ex:LayerHeightParameter
+ex:LayerHeightParameter rdf:type owl:Class ;
+	rdfs:label "Layer Height Parameter" ;
+	rdfs:subClassOf comm:PerformanceSpecification .
+
+### ex:Standard
+ex:Standard rdf:type owl:Class ;
+	rdfs:label "Standard" ;
+	rdfs:subClassOf comm:DirectiveInformationContentEntity .
+
+### comm:DescriptiveInformationContentEntity
+comm:DescriptiveInformationContentEntity rdf:type owl:Class ;
+	rdfs:label "Descriptive Information Content Entity" ;
+	rdfs:subClassOf comm:InformationContentEntity .
+
+### comm:MeasurementUnit
+comm:MeasurementUnit rdf:type owl:Class ;
+	rdfs:label "Measurement Unit" ;
+	rdfs:subClassOf comm:DescriptiveInformationContentEntity .
+
+### comm:MeasurementUnitOfLength
+comm:MeasurementUnitOfLength rdf:type owl:Class ;
+	rdfs:label "Measurement Unit Of Length" ;
+	rdfs:subClassOf comm:MeasurementUnit .
+
+### comm:MillimeterMeasurementUnit
+comm:MillimeterMeasurementUnit rdf:type owl:Class ;
+	rdfs:label "Millimeter Measurement Unit" ;
+	rdfs:subClassOf comm:MeasurementUnitOfLength .
+
+### comm:ReferenceSystem
+comm:ReferenceSystem rdf:type owl:Class ;
+	rdfs:label "Reference System" ;
+	rdfs:subClassOf comm:DescriptiveInformationContentEntity .
+
+### comm:SpatialReferenceSystem
+comm:SpatialReferenceSystem rdf:type owl:Class ;
+	rdfs:label "Spatial Reference System" ;
+	rdfs:subClassOf comm:ReferenceSystem .
+
+### comm:CartesianCoordinateSystem
+comm:CartesianCoordinateSystem rdf:type owl:Class ;
+	rdfs:label "Cartesian Coordinate System" ;
+	rdfs:subClassOf comm:SpatialReferenceSystem .
+
+### ex:EOSM290CoordinateSystem
+ex:EOSM290CoordinateSystem rdf:type owl:Class ;
+	rdfs:label "E O S M290 Coordinate System" ;
+	rdfs:subClassOf comm:CartesianCoordinateSystem .
+
+#################################################################
+#    Instances
+#################################################################
+
+### ex:LBMProcess1
+ex:LBMProcess1 rdf:type owl:NamedIndividual;
+		rdf:type ex:PowderBedFusionLaserBeam;
+		rdf:type ex:PowderBedFusionLaserBeam .
+
+### ex:YieldStrenth
+ex:YieldStrenth rdf:type owl:NamedIndividual;
+		rdf:type ex:YieldStrength;
+		rdf:type ex:YieldStrength .
+
+ex:YieldStrenth ex:hasvalueof "400"^^int .
+#################################################################
+#    General Axioms
+#################################################################
+
